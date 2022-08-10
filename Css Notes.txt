@@ -1,0 +1,92 @@
+We do not use inline css as if we have many files , and want same css for mutliple pages , we ll need to copy css code in every file , instead we ll create a new file for css , and import it every webpage we need .
+-> Inline CSS has more priority over internal and internal has more over external css
+-> priority : id > class > tags
+Meaning if we change , if changes at higher priority ll be reflected in our website
+
+diff b/w class and id
+-> classes can have mutliple elements , but id has to be unique for every element.
+-> ids and classes are more specific than tags
+-> we uses class if we want to group elements to behave similarly
+-> HTML elements can be assigned multiple classes by listing the classes in the class attribute, with a blank space to separate them.
+-> pseudo classes-> A pseudo-class is used to define a special state of an element.
+
+For example, it can be used to:
+
+Style an element when a user moves over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+
+DIV-> The <div> tag defines a division or a section in an HTML document. The <div> tag is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript. The <div> tag is easily styled by using the class or id attribute. Any sort of content can be put inside the <div> tag.
+* div tag does not do anything on its own
+* it has a default height of 0
+-> every element has a default css properties , example -> margin
+
+CSS BOX MODEL (div)
+
+Margin -> Border -> padding -> elements
+* note padding does not apply to background image or color
+* margin provides the spacing that we require between different divs in our website.
+* border is the border of our div , it does not change the height and width of our elements, but increase the overall size of our div
+* padding is the distance between elements and the border , lets say the distance between border and text inside or div tag.
+
+
+Display -> The display property specifies the display behavior (the type of rendering box) of an element.
+* common display property values are -> inline , block , none etc.
+* some tags such as <p> , <h1> to <h6> etc
+* tags like img are inline block by default ->
+ An img element is a replaced inline element.
+It behaves like an inline element (because it is), but some generalizations about inline elements do not apply to img elements.
+
+* tags like div are hidden by default
+NOTE -> display: none -> removes the element from the body
+        visibility :hidden -> element remains in the body , its just not visible
+        display: inline -> allows other elements to be added in same horizontal level
+        display: block -> occupies the whole width of the web page and does not allow any other element to be added in front of it
+        display : inline block->
+
+
+CSS POSITIONS :
+STATIC , RELATIVE , ABSOLUTE , FIXED
+
+* static is the default position of all elements
+
+* RELATIVE-> sets the element's position relative to what it would be if it were static -> we can set relative positions using 4 properties:
+* Top -> defines the margin from its original top border
+* bottom -> defines the margin from its original bottom Border
+* left -> defines the margin from its original left border
+* right -> defines the margin from its original right border
+
+* ABSOLUTE -> it sets the margin from its parent container , top , bottom , left , right -> margin of our element from its parent element in all 4 directions
+
+* Fixed -> fixes the position of our element even as we scroll down or up . We just have to set the position of our element , it ll be fixed their only.
+IMP*** -> A page element with relative positioning gives you the control to absolutely position children elements inside of it.
+Absolute position affects the element itself along with its children
+
+
+*** text align : center -> puts all the block and inline elements in the centre of the webpage horizontally.
+
+FONT FAMILY -> some browsers might not have a particular font installed , so we can a have a stack of a font such that it goes from specific to less specific , st if a browser does not have specific one , it can render the less specific one .
+
+Eg ->
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+"Helvetica Neue" is most specific
+sans-serif is the least specific.
+/*16 px == 100% == 1em*/ dynamic fonts sizes
+
+Dynamic font sizes are inherited , i.e if we set parents font size , it is inherited in the children . 
+
+Body{
+Font-size:2em;
+}
+H1{
+Font-size:5em;
+}
+Now h1 ll inherit 2em from body , and the total size of h1 ll become 7 em , same is the case with percentage sizing , 
+So a new sizing is used that ‘rem’ i.e Ripped em , in which case it ll not inherit parents font size and at the same time ll be dynamic
+
+FLOAT AND CLEAR(mostly used in wrapping texts) 
+FLOAT -> controls where the element ll float , 
+Eg if we say float :right:; then the text or other elements below our current element ll come to its left i.e the image ll be floated to the right , so that we can add elements to its left.
+
+Clear -> The CSS clear property specifies what elements can float beside the cleared element and on which side.
+Clear left means , no element can float to left of our element.

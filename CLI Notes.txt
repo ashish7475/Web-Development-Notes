@@ -1,0 +1,28 @@
+cd -> change directory
+cd ~ to come to the home directory
+cd .. : this command is used to move to the parent directory of current directory, or the directory one level up from the current directory. “..” represents parent directory. 
+
+cd "Name of the directory" -> to change the directory
+
+mkdir "name" to create a new folder
+
+touch "filename.extension" to create new file
+
+Ctrl + A to bring the cursor to begining
+Ctrl + E to bring the cursor to the end 
+Hold Alt to enable mouse to take cursor to the required place
+Ctrl + U to clear the commands
+up key to navigate the previous commands
+
+start "filename.ext"  to open a file
+start software "filename.ext" to open a file in the software
+
+rm "filename.ext" to remove a file
+rm * to remove every file in a folder or directory
+rm -r "foldername"/ to remove a folder inside the current directory
+
+pwd stands for Print Working Directory. It prints the path of the working directory, starting from the root.
+
+clear -> to clear the command line 
+
+

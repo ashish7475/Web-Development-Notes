@@ -1,0 +1,314 @@
+Earlier all the logical stuff in websites used to be done via requests by the websites to the server , where in the server actuall logical things used to happen and then sent back to the websites.
+Now in order to remove the server from picture , there was a need to develop a scripting language that could do the logical stuff in the website itself
+
+It was called LiveScript first ,
+then MS changed it to Jscript
+then european changed it to ECMAScript
+Since java was famous , so javascript was named after java so that it could be famous
+
+We use Math.floor(val) to scale down a decimal value
+
+We use console.log("Whatever we want to print") to print anything inside the closed brackets in the console.
+we use alert("MSG") it displays the output in a pop up making everything else unable to use.
+We use prompt() to get user input from a pop up.
+
+diff between 
+ === and ==
+=== checks if RHS is equal to LHS along with their data types .
+== doestn care about the data types
+
+Javascript Arrays
+Javascript arrays can have multiple data types in it. 
+when we use typeof() func to an array , it return object , i.e Javascript array is an object however it is different from an object.
+
+
+diff b/w object and arrays 
+
+object has named indexes 
+
+arrays has numbered indexes  -> Array.isArray(myarray) is used to check whether an array or not
+
+
+The postion of the link to script or internal js matters/ exteranl js link matters alot , since the code is read line by line , if the element used in our js is not yet seen by the website interpreter then script ll not work
+
+All the selectors i.e querySelectorAll , getElementByClassName , or in other words that select multiple html elements return a array of all the elements so we need to use array indexing to select any one of them.
+
+//  addEventListener takes two arguments , 1. what even are we talking about 2. what should it do after the even has occured (this should be a javascript function)
+
+We can give a function as an argument to another function to make things easy .
+
+function add (num1 , num2){
+  return num1+num2;
+}
+
+function calculator(num1,num2,operator){  // the 3rd argument here is any function we want to apply to num1 and num2 .
+
+   return operator(num1,num2);     // so it ll return whatever the function applied to num1 and num2 returns 
+}
+
+eg -> calculator(5,6,add);  // now this ll apply add func to 5 and 6 , and return 11 as the answer. Notice , first the value from add ll be returned to the calculator func and then calulator func ll return the funal answer .
+
+
+We can create javascript objects which can have string indexes.
+eg- >   var Student = {name: "ashish" , class: 10 , age : 16 };
+
+
+But if we need lets say 100 students we ll need to specify all the properties again and again . 
+iN order to prevent this we can use a constructor function . 
+* Constructor functions helps us create objects in fast and easy way
+
+* we dont use camel casing in constructor functions, it helps us identify the constructor functions.
+
+Syntax:    function StudentDetails(name, class, age){
+                this.name = name;
+                this.class = class;
+                this.age = age;
+             }
+ *** What is this?
+In JavaScript, the this keyword refers to an object.
+
+Which object depends on how this is being invoked (used or called).
+
+The this keyword refers to different objects depending on how it is used:
+
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+
+The JavaScript Switch Statement
+Use the switch statement to select one of many code blocks to be executed.
+
+Syntax
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+This is how it works:
+
+The switch expression is evaluated once.
+The value of the expression is compared with the values of each case.
+If there is a match, the associated block of code is executed.
+If there is no match, the default code block is executed.
+
+
+For taking keyboard input we ll add the whole document instead of selecting a particular selector.
+
+if we add   'func()' in the parameter of an eventlistner the func ll run before the event. so we need to only use the name of the func unless its a anonymous func.
+
+the func in event listener ll now have an argument i.e everytime whenever the event occurs .
+Now if we console.log(event) , we ll get an dictionary , out of that key gives the actual value of the keydown even.
+So we create->  var char = event.key; // this ll give the value of the key pressed
+// now ll use swtich statement for char to play sounds based on key pressed.
+
+
+// argument in anonymous func ll always be the even that has occured for a anonymous func inside the event listener
+
+JAVASCRIPT CALLBACK FUNCTIONS -. A callback is a function passed as an argument to another function
+
+This technique allows a function to call another function
+
+A callback function can run after another function has finished 
+
+notice that we are not appending parentheses func when we pass it in as an argument. This is because we do not want to execute our callback function right away, we simply want to pass the function definition along to the higher-order function so that it can be executed later.
+
+
+function abc(event){  
+  console.log(event.key);
+}
+
+document.addEventListener("keydown", function(){abc(event)}); // method to take event as an argument to a func. 
+
+/*** HERE IS HOW WE TAKE ANONYMOUS FUNC AS AN ARGUMENT IN A FUNC 
+function calc(a,b,op){
+    console.log(a+b);
+    op();
+}
+
+calc(5,5,function(){
+    console.log("Hi ashish")
+})
+
+
+
+shift() and unshift() removes and adds elements from the start of an array in JS resp
+pop() and push() removes and add elements at the back of the array resp
+
+
+We use .value to access the text from input fields
+
+
+// Unwrapped code in js just runs once at the time of rendering the script
+
+
+*** var allows variable hositing i.e Hoisting in JavaScript is a behavior in which a function or a variable can be used before declaration.
+  For example,
+
+// program to display value
+a = 5;
+console.log(a);
+var a; // 5
+
+
+In the above example, variable a is used before declaring it. And the program works and displays the output 5. The program behaves as:
+
+// program to display value
+var a;
+a = 5;
+console.log(a); // 5
+
+However in JavaScript, initializations are not hoisted. For example,
+
+// program to display value
+console.log(a);
+var a = 5;
+
+Output
+
+undefined
+The above program behaves as:
+
+var a;
+console.log(a);
+a = 5;
+
+
+** let and const does not allow hoisting .
+
+Arrow functions were introduced in ES6.
+
+Arrow functions allow us to write shorter function syntax:
+
+
+let hello = (a,b) => {          // arrow func -> explicit return
+             return a+b
+         }
+
+let hello = (a,b) => a+b        // arrow func -> implicit return
+
+
+
+JavaScript Array Methods
+So far, we have seen a few array properties and methods. Let's do a quick recap of the ones we've looked at:
+
+push() – Insert an element at the end of the array.
+unshift() – Insert an element at the beginning of the array.
+pop() – Remove an element from the end of the array.
+shift() – Remove an element from the beginning of the array.
+slice() – Create a shallow copy of an array.
+Array.isArray() – Determine if a value is an array.
+length – Determine the size of an array.
+
+
+The join() array method
+The join() method joins all the elements of the array using a separator and returns a string. The default separator used for joining is comma(,).
+
+const emotions = ['🙂', '😍', '🙄', '😟'];
+
+const joined = emotions.join();
+console.log(joined); // "🙂,😍,🙄,😟"
+You can pass a separator of your choice to join the elements. Here is an example of joining the elements with a custom separator:
+
+const joined = emotions.join('<=>');
+console.log(joined); // "🙂<=>😍<=>🙄<=>😟"
+Invoking the join() method on an empty array returns an empty string:
+
+[].join() // returns ""
+
+The join() array method
+The join() method joins all the elements of the array using a separator and returns a string. The default separator used for joining is comma(,).
+
+const emotions = ['🙂', '😍', '🙄', '😟'];
+
+const joined = emotions.join();
+console.log(joined); // "🙂,😍,🙄,😟"
+You can pass a separator of your choice to join the elements. Here is an example of joining the elements with a custom separator:
+
+const joined = emotions.join('<=>');
+console.log(joined); // "🙂<=>😍<=>🙄<=>😟"
+Invoking the join() method on an empty array returns an empty string:
+
+[].join() // returns ""
+
+The filter() array method
+The filter() method creates a new array with all the elements that satisfies the condition mentioned in the function. Let's find the student who is female. So the filter condition should be that the gender is equal to 'F'.
+
+const femaleStudents = students.filter((element, index) => {
+  return element.gender === 'F';
+})
+
+console.log(femaleStudents);
+The output is this:
+
+image-50
+That's right. The student with name Rubi is the only female student we have got so far.
+
+The map() array method
+The map() method creates a new array by iterating through the elements and applying logic we provided in the function as an argument. We'll create a new array of full names of all the students in the students array.
+The complete map() method syntax
+The syntax for the map() method is as follows:
+
+arr.map(function(element, index, array){  }, this);
+
+const fullNames = students.map((element, index) => {
+  return {'fullName': element['f_name'] + ' ' + element['l_name']}
+});
+
+console.log(fullNames);
+The output looks like this:
+
+image-51
+Here we see a new array with the fullName properties that is computed using the f_name and l_name properties of each student object.
+
+The reduce() array method
+The reduce() method applies a reducer function on each of the array elements and returns an output value. We'll apply a reducer function on the students array to compute the total amount paid by all the students.
+
+const total = students.reduce(
+   (accumulator, student, currentIndex, array) => {
+      accumulator = accumulator + student.paid;
+      return (accumulator);
+   }, 
+0);
+
+console.log(total); // 1000
+In the above code,
+
+We initialize the accumulator with 0.
+We apply the reduce method on each of the student objects. We access the paid property and add it to the accumulator.
+Finally, we return the accumulator.
+
+Asynchronous JavaScript
+"I will finish later!"
+
+Functions running in parallel with other functions are called asynchronous
+
+A good example is JavaScript setTimeout()
+
+A basic fetch request is really simple to set up. Have a look at the following code:
+
+fetch('http://example.com/movies.json')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+Copy to Clipboard
+Here we are fetching a JSON file across the network and printing it to the console. The simplest use of fetch() takes one argument — the path to the resource you want to fetch — and does not directly return the JSON response body but instead returns a promise that resolves with a Response object.
+
+The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So, to extract the JSON body content from the Response object, we use the json() method, which returns a second promise that resolves with the result of parsing the response body text as JSON.
+
+Promises in Javascript
+
+ASYNC IS USED TO RETURN PROMISES
+AWAIT IS USED TO WAIT FOR A PROMISE AND TO SOMETHING WITH THE Value recieved if its resolved or not .
+we can use try catch block for if the promise if resolved or not
+
+we can use prototype property of any predefined js class like array to create our own methods
+ed -> Array.prototype.methodName = function(){ // defining the method
+
+}

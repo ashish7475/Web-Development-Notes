@@ -1,0 +1,16 @@
+node "filename.js" - means using node to run a javascript file without actually opening our file
+
+node -> to enter the REPL mode (Read Evaluate Event Loop) -> that reads and return input line by line like console window in chrome browser
+
+Ctrl + C exits the repl mode 
+.exit does the same thing
+
+Node.js as a File Server
+The Node.js file system module allows you to work with the file system on your computer.
+
+To include the File System module, use the require() method: var fs = require('fs');
+
+fs.copyFileSync("file1" , "file2") to copy contents of file 1 into file2 using node file server
+
+npm init <initializer> can be used to set up a new or existing npm package.
+NPM -> node package manager

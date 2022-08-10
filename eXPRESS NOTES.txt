@@ -1,0 +1,35 @@
+This app starts a server and listens on port 3000 for connections. The app responds with “Hello World!” for requests to the root URL (/) or route. For every other path, it will respond with a 404 Not Found.
+
+EXPRESS IS LIKE ANY OTHER NPM WHICH IS WIDELY USED MY DEVS.
+
+const express = require("express");  // THIS IS HOW WE IMPORT EXPRESS IN JS FILE
+
+const app = express();  // THIS IS TO INITIALISE THE EXPRESS APP INORDER TO SAVE ALL THE FUNCS IN A VAR APP SO THAT WE CAN USE IT 
+
+app.get("/",function(request,response){   
+  response.send("hello")
+})
+
+app.listen(3000, function(){         //The app.listen() function is used to bind and listen the connections on the specified host and port. This                                                     method is identical to Node’s http.Server.listen() method.
+  console.log("server started");
+});
+
+Request object
+Express.js  is a  request & response objects parameters of the callback function and are used for the Express applications. The request object represents the HTTP request and contains properties for the request query string, parameters, body, HTTP headers, etc.
+
+Response Object
+The response object specifies the HTTP response when an Express app gets an HTTP request. The response is sent back to the client browser and allows you to set new cookies value that will write to the client browser.
+
+
+response.send("html we want to view in our website")
+response.sendFile(__dirname +"/index.html") to send an HTML file .
+__dirname ll give the address of the current file no matter in which system it is + the file name for full path
+
+we can only use 1 app.send() per HTTP request
+However you can use multiple app.write()  in an HTTP request and then just write app.send() , this ll send all the write methods above 
+
+
+to use an API we need to import node native module HTTPS inide our app.js file and then we just need to use https.get(url,callbackfunc(response))
+then inside of this func we need to use response.on("data",callback) -> to do something with the data that we receive , and then we can use 
+JSON.parse(data) to convert this data to JSON object and then we can tap into the objects to get our required data .
+
